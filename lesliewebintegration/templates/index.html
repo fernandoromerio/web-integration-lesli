@@ -4,6 +4,521 @@
        <META HTTP-EQUIV="Content-Type" CONTENT="text/html;charset=ISO-8859-1">
        <LINK REL="stylesheet" TYPE="text/css" HREF="lsi2.css">
        <LINK REL="shortcut icon" HREF="favicon.ico">
+
+    <style type="text/css">
+    body {
+	font-family: "Trebuchet MS", verdana, arial, helvetica, sans-serif;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+	background:#e9eef6 url(images/body-bg.gif) repeat-x;
+}
+
+/* Ventana emergente */
+.emergente {
+	background: white;
+	padding: 1em 1em 0.5em 1em;
+}
+
+/******************************************************************************/
+/* Layout                                                                     */
+/******************************************************************************/
+#container {
+	width:860px;
+	margin: 0 auto;
+	background: white;
+	padding: 1em 1em 0.5em 1em;
+}
+
+#cabecera1 {
+   	background-color: #69C;
+   	color: #000;
+   	width: 860px;
+    margin: 0 auto;
+}
+.textocabecera1 {
+	padding: 0.4em 1.3em;
+	width: 860px; margin: auto;
+}
+
+#cabecera2 {
+	background-color: #9CF;
+	color: #000;
+	width: 860px;
+	margin: 0 auto;
+	padding: 0;
+}
+.textocabecera2 {
+	padding: 0.2em 0.3em 0.3em 5.5em;
+	text-align: left;
+	margin: 0;
+}
+
+/* PiÃ© de pÃ¡gina */
+#pie {
+	background-color: #9CF;
+	color: #000;
+	width: 860px;
+	clear: both;
+}
+.textopie {
+	padding: 0.2em 0.3em 0.3em 0.3em;
+	text-align: right; margin: 0;
+}
+
+#content {
+}
+#secondary {
+	/* float: left; */
+	margin: 2em 2em 1.2em 2em;
+}
+
+/******************************************************************************/
+/* Textos especiales                                                          */
+/******************************************************************************/
+P.volver {
+	margin-top: 1.4em;
+	font-size: 0.9em;
+	clear: left;
+}
+P.seccionPagina {
+	font-size: 0.9em;	
+}
+P.error {
+	color: #990000; font-size: 0.9em;
+}
+P.cerrar {
+	margin-top: 1.4em;
+	font-size: 0.9em;	
+}
+
+/* Titulares */
+      h1 {
+      	font-family: verdana,arial; font-size: 1.1em; font-weight: bold; color:#333366;
+      	margin-bottom: 1.2em;
+      	}
+      h2 {
+      	font-family: verdana,arial; font-size: 1em; font-weight: bold; font-style: italic;
+      }
+      H2.linea {font-family: verdana,arial; font-size: 1em; font-weight: bold; font-style: normal;
+         border-style: dashed; border-width: 0px; border-bottom-width: 1px; border-color: #6699CC}
+      H3 {font-family: verdana,arial; font-size: 10pt; font-weight: bold}
+      H3.normal {font-family: verdana,arial; font-size: 10pt; font-weight: normal}
+/* Titular para una lista de elementos de una categorÃ­a (enlaces, asignaturas, descargas...) */
+   /* TambiÃ©n para los epÃ­grafes de la pÃ¡gina de asignatura */
+      H2.titular-lista-elementos-categoria {background-color: #69C; color: white; font-size: 0.9em;
+         font-weight: bold; font-style: normal; margin: 0; padding: 0.3em;}
+/* Subtitular para una lista de elementos de una categorÃ­a (enlaces, asignaturas, descargas...) */
+   /* TambiÃ©n para los subepÃ­grafes de la pÃ¡gina de asignatura */
+      H3.subtitular-lista-elementos-categoria {color: black; font-size: 0.8em;
+         font-weight: bold; font-style: normal; margin: 0; padding: 0.3em;}
+
+/* Enlaces de hipertexto */
+     A:link {font-family: verdana,arial; color:#6699CC; text-decoration: none}
+     A:visited {font-family: verdana,arial; color:#6699CC; text-decoration: none}
+     A:hover {font-family: verdana,arial; color:#FF9900}
+
+     A.fondoazul:link {font-family: verdana,arial; font-size: 0.9em; color:black; text-decoration: none}
+     A.fondoazul:visited {font-family: verdana,arial; font-size: 0.9em; color:black; text-decoration: none}
+     A.fondoazul:hover {font-family: verdana,arial; font-size: 0.9em; color:#6699CC}
+
+     A.encabezado:link {font-family: verdana,arial; color:white; text-decoration: none}
+     A.encabezado:visited {font-family: verdana,arial; color:white; text-decoration: none}
+     A.encabezado:hover {font-family: verdana,arial; color:#FFCC00}
+
+     A.menu:link {font-family: verdana,arial; color:#FFCC00; text-decoration: none}
+     A.menu:visited {font-family: verdana,arial; color:#FFCC00; text-decoration: none}
+     A.menu:hover {font-family: verdana,arial; color:white}
+
+     A.menusel:link {font-family: verdana,arial; color:white; text-decoration: none}
+     A.menusel:visited {font-family: verdana,arial; color:white; text-decoration: none}
+     A.menusel:hover {font-family: verdana,arial; color:#FFCC00}
+
+     A.antispam:link {font-size: 0.9em;}
+     A.antispam:visited {font-size: 0.9em;}
+     A.antispam:hover {font-size: 0.9em;}
+
+
+/* Fecha de actualizaciÃ³n de una pÃ¡gina */
+     P.actualizacion {font-family: verdana,arial; font-size: 0.9em; font-style: italic}
+
+/* DirecciÃ³n */
+     ADDRESS {font-family: verdana,arial; font-size: 0.9em; font-style: normal}
+     ADDRESS.cursiva {font-family: verdana,arial; font-size: 0.9em; font-style: italic}
+
+/* TABLAS */
+     TD {font-family: verdana,arial; font-size: 0.9em}
+     TD.error {font-family: verdana,arial; font-size: 0.9em; background: white; color: red}
+     TH {font-family: verdana,arial; font-size: 0.9em; font-weight: bold; color: white;
+        background: #0066CC; text-align: left}
+     TABLE.bordeblanco {border-collapse: separate; border: 1px solid white;}
+     TABLE.bordeazul {border-collapse: separate; border: 1px solid #6699CC}
+     TD.bordeazul {border: 1px solid #E6EEF6;}
+     TD.rellenoazul {background: #E6EEF6; border: 1px solid #E6EEF6;}
+     TD.rellenoazulcen {background: #E6EEF6; border: 1px solid #E6EEF6; text-align: center;}
+     TD.rellenonaranja {background: #FC6; border: 1px solid #FC6; text-align: center;}
+     TD.rellenoverde {background: #CF9; border: 1px solid #CF9; text-align: center;}
+     TD.rellenorosa {background: #FCF; border: 1px solid #FCF; text-align: center;}
+     TD.rellenoamarillo {background: #FF9; border: 1px solid #FF9; text-align: center;}
+
+     .fondoazulcen {background: #E6EEF6; border: 1px solid #E6EEF6;}
+     .fondonaranja {background: #FC6; border: 1px solid #FC6;}
+     .fondoverde {background: #CF9; border: 1px solid #CF9;}
+     .fondorosa {background: #FCF; border: 1px solid #FCF;}
+     .fondoamarillo {background: #FF9; border: 1px solid #FF9;}
+
+/******************************************************************************/
+/* Tabla de descargas                                                         */
+/******************************************************************************/
+/* Cabecera con fondo azul azafata (#6699CC) y letra blanca en negrita */
+/* Filas con fondo en azul claro (#E9EEF6) y letra negra */
+	table.descargas {
+	}
+	th.descargas {
+		color: white; background: #6699CC; font-weight: bold;
+	}
+	th.descargaProtegida {
+		color: black; background: #FFFFFF;
+	}
+	td.descargas {
+		color: black; background: #E9EEF6;
+	}
+	td.descargaProtegida {
+		color: black; background: #FFFFFF;
+	}
+/******************************************************************************/
+
+/******************************************************************************/
+/* Tabla de curso                                                             */
+/******************************************************************************/
+/* Cabecera con fondo azul azafata (#6699CC) y letra blanca en negrita */
+/* TÃ­tulo de fila con fondo en azulina (#99CCFF) y letra negra */
+/* Texto de fila con fondo en azul claro (#E9EEF6) y letra negra */
+	table.cursos {
+	}
+	th.cursos {
+		color: white; background: #6699CC; font-weight: bold;
+	}
+	td.cursosColumna1 {
+		color: black; background: #99CCFF;
+	}
+	td.cursos {
+		color: black; background: #E9EEF6;
+	}
+/******************************************************************************/
+
+/******************************************************************************/
+/* Tabla de repositorio                                                       */
+/******************************************************************************/
+/* TamaÃ±o de fuente 0.9em */
+/* Marco azul */
+    table.repositorio {
+    	border: 1px solid #6699CC; font-size: 0.9em;
+    }
+/******************************************************************************/
+
+
+/* Tabla en amarillo y azul */
+     TH.thcen {font-family: verdana,arial; font-size: 0.9em; text-align: center; font-weight: bold; color: white; background: #6699CC}
+     TH.thizq {font-family: verdana,arial; font-size: 0.9em; text-align: left; font-weight: bold; color: white; background: #6699CC}
+     TD.tdder {font-family: verdana,arial; font-size: 0.9em; text-align: right; background: #FFCC00}
+     TD.tdizq {font-family: verdana,arial; font-size: 0.9em; text-align: left; background: #FFCC00}
+     TD.tdcen {font-family: verdana,arial; font-size: 0.9em; text-align: center; background: #FFCC00}
+
+/* Tabla en azul oscuro y azul claro */
+     TABLE.bordeazul {border: 1px solid #6699CC;}
+/* Encabezado: letra blanca sobre fondo azul oscuro */
+     TH.encabezado-tazul {font-size: 0.9em; color: white; font-weight: bold;
+        background-color: #6699CC; margin: 0; padding: 0.3em;}
+     TH.encabezado-tazul-centrado {font-size: 0.9em; color: white; font-weight: bold;
+        background-color: #6699CC; margin: 0; padding: 0.3em; text-align: center;}
+/* Fila: letra negra sobre fondo azul claro */
+     TD.fila-tazul {font-size: 1em; background-color: #E9EEF6;
+        margin: 0.2em 0; padding: 0.3em;}
+     TD.fila-tazul-centrada {font-size: 1em; background-color: #E9EEF6;
+        margin: 0.2em 0; padding: 0.3em; text-align: center;}
+     TD.fila-tazul-derecha {font-size: 1em; background-color: #E9EEF6;
+        margin: 0.2em 0; padding: 0.3em; text-align: right;}
+/* Fila: letra negra sobre fondo blanco */
+     TD.fila-tazul2 {font-size: 1em; background-color: #FFFFFF;
+        margin: 0.2em 0; padding: 0.3em;}
+     TD.fila-tazul2-centrada {font-size: 1em; background-color: #FFFFFF;
+        margin: 0.2em 0; padding: 0.3em; text-align: center;}
+     TD.fila-tazul2-derecha {font-size: 1em; background-color: #FFFFFF;
+        margin: 0.2em 0; padding: 0.3em; text-align: right;}
+
+/* Noticias */
+/*     TD.noticiaFecha {font-family: verdana,arial; font-size: 8pt; text-align: left; font-style: italic}
+     TD.noticiaTitulo {font-family: verdana,arial; font-size: 8pt; text-align: left; font-weight: bold; color: black}
+     TD.noticiaTexto {font-family: verdana,arial; font-size: 8pt; text-align: left}
+*/
+     P.noticiaFecha {text-align: left; font-style: italic; font-size: 0.9em; margin: 0.8em 0 0 0;}
+     P.noticiaTitulo {text-align: left; font-weight: bold; font-size: 1em; margin: 0.1em 0 0 0;}
+     P.noticiaResumen {text-align: left; margin: 0.1em 0 0 0;}
+     P.noticiaTexto {text-align: left; margin: 0; margin: 0.1em 0 0 0;}
+
+     TD.fila {font-family: verdana,arial; font-size: 10pt; background: #CCCCCC}
+     TD.blanco {font-family: verdana,arial; font-size: 10pt; background: white}
+     TD.titulo {font-family: verdana,arial; font-size: 10pt; font-weight: bold; background: white}
+     TD.contenido {font-family: verdana,arial; font-size: 10pt; background: white}
+     TD.apartado {font-family: verdana,arial; font-size: 12pt; font-weight: bold; color: #6699CC}
+
+/* PÃGINA DE ASIGNATURA */
+/* Nombre de asignatura en la pÃ¡gina de la asignatura */
+     .nombre_asignatura {font-family: verdana,arial; font-size: 1.2em;
+        font-weight: bold; color:#333366;}
+/* Curso acadÃ©mico en la pÃ¡gina de la asignatura */
+     .curso_academico {font-family: verdana,arial; font-size: 0.8em;
+        font-weight: normal; color: black;}
+/* Caja para colocar enlaces a las pÃ¡ginas de otros cursos */
+     #otros-cursos {position: absolute; left: 540px; top: 90px;
+        width: 180px; margin: 3em 0 0 0; padding: 0;}
+/* Caja para colocar el logotipo de acreditaciÃ³n web al final de la pÃ¡gina */
+     #acreditacion-web {text-align: center; border-top: 1px dashed #69C; padding-top: 1em;}
+/* Caja para colocar el logotipo de acreditaciï¿½n web al comienzo de la pÃ¡gina */
+     #acreditacion-web-arriba {float: right;}
+/* Enlace a la pÃ¡gina propia de la asignatura */
+     P.pagina-propia {margin: 0;}
+
+/* Textos con letra pequeÃ±a */
+     .tiny {font-size: 0.9em; text-align: left}
+     .tinyc {font-size: 0.9em; text-align: center}
+     .font8pt {font-size: 0.9em; text-align: left}
+     .font8ptc {font-size: 0.9em; text-align: center}
+     .font8ptcb {font-size: 0.9em; text-align: center; font-weight: bold}
+     .font8ptr {font-size: 0.9em; text-align: right}
+     .font8pt-fondoazul {font-size: 0.9em; text-align: left; color: white; font-weight: bold}
+     .font8ptc-fondoazul {font-size: 0.9em; text-align: center; color: white; font-weight: bold}
+
+/* Formularios */
+     INPUT {font-family: verdana,arial; font-size: 0.9em}
+     TEXTAREA {font-family: verdana,arial; font-size: 10pt}
+     SELECT.8pt {font-family: verdana,arial; font-size: 8pt}
+     INPUT.boton {color: #336699; background: #FFCC00}
+     #acierto {color: green}
+     #fallo {color: red}
+
+/* Formulario con dos columnas y secciones */
+     FORM.doscolumnas P {clear: left; margin: 0.2em; padding: 0.1em;}
+     FORM.doscolumnas P LABEL {float: left; width: 20%; font-style: italic;}
+     .error {clear: left; margin-left: 20%; color: #990000;}
+     .errorSimple {color: #990000;}
+     FORM.doscolumnas LEGEND {font-weight: bold; color: black; background-color: #E9EEF6;}
+     FORM.doscolumnas FIELDSET {border: 1px dotted #6699CC; padding-left: 0.5em; margin-top: 1em;}
+
+/* Filas de colores alternativos */
+     #filapar {background: #FFFFFF}
+     #filaimpar {background: #E9EEF6}
+     
+/* Cajas de tamaÃ±o fijo para colocar con DIV */
+     .caja350 {width: 350px}
+     .caja650 {width: 650px;}
+     .cajaestadonotas {position: absolute; left:750px; top:220px}
+     .cajanoticias1 {position: absolute; left:400px; top:140px;
+                     background-color: #E9EEF6;
+                     width: 300px; padding: 1em;}
+     .cajanoticias2 {position: absolute; left:400px; top:190px;
+                     background-color: #E9EEF6;
+                     width: 300px; padding: 1em;}
+     .cajanoticias3 {position: absolute; left:400px; top:240px;
+                     background-color: #E9EEF6;
+                     width: 300px; padding: 1em;}
+     .cajanoticias4 {position: absolute; left:400px; top:320px;
+                     background-color: #E9EEF6;
+                     width: 300px; padding: 1em;}
+                     
+   /* Caja de noticias para la web de postgrado */
+      .cajanoticiaspop {
+	      position: absolute; left: 450px; top: 180px; width: 250px;
+          border: 1px solid #E6EEF6;
+	      background: #FFFFFF;
+	      padding: 0.5em;
+	   }
+      .cajanoticiaspop-titular {
+	      position: absolute; left: 450px; top: 150px; width: 250px;
+          font-size: 1.2em; font-weight: bold; font-style: normal;
+          color: #69C;
+          background: #E9EEF6;
+          border: 1px solid #E9EEF6; 
+          padding: 0.3em 0.2em 0.3em 0.5em; 
+       }
+
+   /* Caja para anuncios en la pï¿½gina de inicio de la zona privada */
+      .cajaanunciozonaprivada {
+	      position: absolute; left: 450px; top: 150px; width: 270px;
+          border: 1px solid #E6EEF6;
+	      background: #FFFFFF;
+	      padding: 0.5em;
+	   }
+
+   /* Caja para anuncios en una pï¿½gina secundaria */
+      .cajaanunciopaginasecundaria {
+	      position: absolute; left: 450px; top: 85px; width: 250px;
+	      background: #FFFFFF;
+	      padding: 0.5em;
+	   }
+
+   /* Aviso */
+      .aviso {width: 650px; font-weight: bold; color: black; background: #FFCC00; padding: 8px;}
+      .aviso-mantenimiento {width: 650px; font-weight: bold; color: black;
+         background: #FFCC00; padding: 1em; margin: 3em; text-align: center;}
+   /* Bloque con indentaciÃ³n */
+      .bloque-indentado {margin-left: 5%; margin-top: 2em; width: 650px;}
+   /* Flecha arriba */
+      /* .flecha-arriba {width: 650px; text-align: right;} */
+      .flecha-arriba {width: 100%; text-align: right;}
+   /* Caja centrada */
+      .caja-centrada {width: 100%; text-align: center; padding-top: 3em; padding-bottom: 1em;}
+   /* Nota destacada */
+      .notadestacada {width: 650px; border: 1px dashed #6699CC; font-weight: bold;
+         color: black; background: #E9EEF6; padding: 8px;}
+   /* Nota destacada */
+      .notadestacadablancaderecha {width: 300px; border: 1px dashed #6699CC; font-weight: bold;
+         color: black; background: white; padding: 8px; text-align: right;}
+
+   /* Noticia destacada en la pï¿½gina de asignatura */
+      .noticiadestacada {
+         width: 650px;
+         border: 1px dashed #6699CC;
+         color: black; background: #FFCC00;
+         /*text-align: center;*/
+         padding: 1em;
+         margin-bottom: 2em;
+      }
+      .noticiadestacada P.noticiadestacadatitulo {
+         font-size: 1.2em;
+         font-weight: bold;
+      }
+      .noticiadestacada P.noticiadestacadatexto {
+      }
+      .noticiadestacada A {
+      }
+
+/* Listas */
+   /* Lista de opciones del menÃº de las pÃ¡ginas secundarias */
+      .lista-menu-secundario {list-style-type: none; margin-left: 0; padding-left: 0; padding-top: 0;
+         margin-bottom: 2em;}
+      .item-menu-secundario {margin-bottom: 0.5em;}
+   /* Lista de elementos de una categorÃ­a (enlaces, asignaturas, descargas...) */
+      .lista-elementos-categoria {list-style-type: none; margin: 0.2em 0; padding: 0;}
+      .item-lista-elementos-categoria {background-color: #E9EEF6; margin: 0.2em 0; padding: 0.3em;}
+      .item-lista-elementos-categoria2 {background-color: #E9EEF6; margin: 0em 0; padding: 0.3em;}
+   /* Lista de elementos con una marca de rombo azul */
+      .lista-rombo-azul {margin: 0.8em 1.8em; padding-left: 0;}
+      .item-lista-rombo-azul {list-style-image: url(/imagenes/rombo.gif); margin-bottom: 0.5em;}
+      .item-lista-sin-marca {list-style-type: none; margin-bottom: 0.5em;}
+      .sublista {list-style-type: disc; margin: -1em 0 1.5em 3.5em; padding-left: 0;}
+      .item-sublista {margin-bottom: 0.3em;}
+   /* Lista de fotos */
+      .lista-fotos {list-style-type: none; margin-left: 0; padding-left: 0;}
+      .lista-fotos li {float: left; margin: 0.5em 1em 1.5em; text-align: center;}
+      .lista-fotos img {display: block; margin-bottom: 0.5em;}
+
+/********************************************************************/
+/* Images                                                           */
+/********************************************************************/
+/* Imagen sin borde para utilizar como enlace */
+   IMG.noborder {
+      border: none;
+}
+
+/* Imagen justificada a la izquierda del texto */
+   IMG.imagen-izquierda {float: left; margin: 0 0.5em 0 0;}
+
+/* PÃ¡rrafos */
+   /* PÃ¡rrafo que se baja para quedar debajo del bloque anterior */
+      P.aparte {clear: both;}
+   /* PÃ¡rrafo sin mÃ¡rgenes, para colocar dentro de una caja */
+      P.sinmargen {margin: 0;}
+
+/* Elementos SPAN */
+      .importante {font-weight: bold;}
+      .destacado {font-weight: bold;}
+      .enfatizado {font-style: italic;}
+      .importanteRojo {font-weight: bold; color: red;}
+      .fecha {font-size: 0.9em; font-style: italic;}
+      .obligatorio {font-weight: normal; font-size: 0.8em;}
+
+/* PÃ¡gina de inicio */
+   #inicio-columnaizquierda {position: absolute; top: 90px; left: 20px; width: 360px; margin: 0; padding: 0;}
+   #inicio-columnacentro {position: absolute; top: 90px; left: 400px; width: 160px; margin-top: 1em;}
+   #inicio-columnaderecha {position: absolute; top: 90px; left: 580px; width: 140px;}
+   #inicio-filaabajo {position: absolute; top: 330px; width: 720px;}
+
+   /* #inicio-izquierda {border: 1px solid #E6EEF6; text-align: left; padding: 0em 0.5em 0.5em 0.5em;} */
+   #inicio-izquierda {text-align: left; padding: 0em 0.5em 0.5em 0.5em;}
+   #inicio-centro {}
+   /* #inicio-derecha {border: 1px solid #E6EEF6; text-align: left; padding: 0em 0.5em 0em 0.5em;} */
+   #inicio-derecha {text-align: left; padding: 0em 0.5em 0em 0.5em;}
+   #inicio-abajo {text-align: left; padding: 1em 0 0 0;}
+   /*.caja-anuncio {margin: 0.3em 0; padding: 0.3em; border: 1px solid #E6EEF6; text-align: center;} */
+   .caja-anuncio {margin: 0 0 0 0; padding: 0 0 1.4em 0; text-align: center;}
+   P.acceso-rapido {margin: 0.8em 0 0.8em 0;}
+   P.masnoticias {margin: 1em 0 0.8em 0;}
+   h1.inicio-rotulo {font-size: 1.1em; font-weight: bold; background-color: #E6EEF6;
+      border: 1px solid #E6EEF6; padding: 0.2em 0.2em 0.2em 0.4em; margin: 0 0 0.2em 0; color: #69C;
+      font-family: verdana, arial, sans-serif; margin-top: 1em;}
+
+/********************************************************************/
+/* DirecciÃ³n de contacto                                            */
+/********************************************************************/
+   address.contacto {
+      font-size: 0.8em;
+   }
+
+/********************************************************************/
+/* AplicaciÃ³n del panel informativo                                 */
+/********************************************************************/
+   ul.listaImagenes {
+      list-style-type: none;
+   }
+   ul.listaImagenes li {
+      display:inline;
+      margin-bottom: 0.5em;
+   }
+   
+   #formulario {
+	  float: left;
+	  margin: 0;
+	  padding: 0;
+	  width: 70%;
+   }
+
+   #sidebar {
+	  float: right;
+	  width: 30%;
+ 	  margin: 0;
+	  padding: 0;
+	  text-align: center;
+   }
+   form.insertform {
+	  border: 1px dotted #3a566a;
+	  padding: 0.2em;
+	  margin: 0 0 1em 2em;
+	  width: 100%;	
+   }
+   form.insertform p {
+	  clear: left;
+  	  margin: 0.2em;
+	  padding: 0.1em;
+   }
+   form.insertform p label {
+	  float: left;
+	  width: 20%;
+	  font-weight: bold;
+   }
+   p.notaobligatorio {
+	  margin-left: 2em;
+	  margin-bottom: 2em;
+   }
+   form.insertform p.boton {
+	  margin-top: 1em;
+   }
+   
+/* Fin de la hoja de estilos */
+
+    
+    </style>
     
     <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ?
@@ -184,15 +699,16 @@
     
     </div>
     
-    </BODY>
+    
+    
 
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
   intent="WELCOME"
   chat-title="Leslie"
   agent-id="34328104-0cca-4e26-83f8-951364f33a43"
-  chat.icon="https://i.ibb.co/TwGy1Zx/chatbot.png"
+  chat-icon="https://i.ibb.co/TwGy1Zx/chatbot.png"
   language-code="es"
 ></df-messenger>
-
-</html>
+</BODY>
+</HTML>

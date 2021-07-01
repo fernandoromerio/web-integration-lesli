@@ -1,0 +1,4 @@
+  % prepara el repositorio para su despliegue. 
+release: sh -c 'cd lesliewebintegration && python manage.py migrate'
+% especifica el comando para lanzar Leslie
+web: sh -c 'cd lesliewebintegration && gunicorn lesliewebintegration.wsgi --log-file -'
